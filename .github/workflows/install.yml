@@ -1,0 +1,36 @@
+name: Install
+
+# Installs each manifest the way a user would, on a clean Windows machine,
+# and checks the program runs and is the version the manifest says.
+on:
+  push:
+    branches:
+      - 'master'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    name: Install
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install Scoop
+        run: |
+          Invoke-RestMethod https://get.scoop.sh -OutFile install.ps1
+          .\install.ps1 -RunAsAdmin
+          Add-Content $env:GITHUB_PATH (Join-Path $env:USERPROFILE 'scoop\shims')
+      - name: Install lsmd
+        run: |
+          scoop install .\bucket\lsmd.json
+          $want = (Get-Content .\bucket\lsmd.json | ConvertFrom-Json).version
+          $got = lsmd --version
+          "$got"
+          if ("$got" -ne "lsmd $want") { throw "expected lsmd $want, got $got" }
+          scoop uninstall lsmd

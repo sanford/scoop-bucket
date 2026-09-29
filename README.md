@@ -1,42 +1,14 @@
-# Scoop Bucket Template
+# Scoop bucket for lsmd
 
-<!-- Uncomment the following line after replacing placeholders -->
-<!-- [![Tests](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml) [![Excavator](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml) -->
+[![Tests](https://github.com/sanford/scoop-bucket/actions/workflows/ci.yml/badge.svg)](https://github.com/sanford/scoop-bucket/actions/workflows/ci.yml) [![Excavator](https://github.com/sanford/scoop-bucket/actions/workflows/excavator.yml/badge.svg)](https://github.com/sanford/scoop-bucket/actions/workflows/excavator.yml)
 
-Template bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
-
-## How do I use this template?
-
-1. Generate your own copy of this repository with the "Use this template"
-   button.
-2. Allow all GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Actions permissions`.
-   - Select `Allow all actions and reusable workflows`.
-   - Then `Save`.
-3. Workflow permissions:
-   - Navigate to `Settings` - `Actions` - `General` - `Workflow permissions`.
-   - Ensure `Read repository contents and packages permissions` is selected.
-   - Then `Save`.
-4. Document the bucket in `README.md`.
-5. Replace the placeholder repository string in `bin/auto-pr.ps1`.
-6. Create new manifests by copying `bucket/app-name.json.template` to
-   `bucket/<app-name>.json`.
-7. Commit and push changes.
-8. If you'd like your bucket to be indexed on `https://scoop.sh`, add the
-   topic `scoop-bucket` to your repository.
-
-## How do I install these manifests?
-
-After manifests have been committed and pushed, run the following:
+[lsmd](https://github.com/sanford/lsmd), a terminal-friendly Markdown reader built for navigating large projects, for [Scoop](https://scoop.sh) on Windows.
 
 ```pwsh
-scoop bucket add <bucketname> https://github.com/<username>/<bucketname>
-scoop install <bucketname>/<manifestname>
+scoop bucket add sanford https://github.com/sanford/scoop-bucket
+scoop install sanford/lsmd
 ```
 
-## How do I contribute new manifests?
+`scoop update lsmd` brings it up to date. The manifest follows lsmd's releases by itself: every few hours, the Excavator workflow looks for a new release and updates the version and checksum.
 
-To make a new manifest contribution, please read the [Contributing
-Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md)
-and [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
-wiki page.
+Problems with lsmd itself go to [its issues](https://github.com/sanford/lsmd/issues).
