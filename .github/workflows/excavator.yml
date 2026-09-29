@@ -1,5 +1,8 @@
 name: Excavator
 
+# Looks for new releases of each app (its manifest's checkver) and commits
+# the new version and checksum (its autoupdate).
+
 on:
   workflow_dispatch:
   schedule:
