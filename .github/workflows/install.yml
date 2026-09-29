@@ -34,3 +34,11 @@ jobs:
           "$got"
           if ("$got" -ne "lsmd $want") { throw "expected lsmd $want, got $got" }
           scoop uninstall lsmd
+      - name: Install lsnet
+        run: |
+          scoop install .\bucket\lsnet.json
+          $want = (Get-Content .\bucket\lsnet.json | ConvertFrom-Json).version
+          $got = lsnet --version
+          "$got"
+          if ("$got" -ne "lsnet $want") { throw "expected lsnet $want, got $got" }
+          scoop uninstall lsnet
