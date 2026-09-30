@@ -1,12 +1,12 @@
 {
-    "version": "0.8.0",
+    "version": "0.8.1",
     "description": "Terminal-friendly Markdown (.md) reader built for navigating large projects",
     "homepage": "https://github.com/sanford/lsmd",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/sanford/lsmd/releases/download/v0.8.0/lsmd-windows-x64.zip",
-            "hash": "2ef5830f5046bbaae5ca54daac72f5f2606fba60b6b67bfcf985fe9ddf7ff5b0"
+            "url": "https://github.com/sanford/lsmd/releases/download/v0.8.1/lsmd-windows-x64.zip",
+            "hash": "321667a5b9b06d536bf0f9101ec068a24ffbe38cf909d42b7fa655a08e6faa6e"
         }
     },
     "bin": "lsmd.exe",
