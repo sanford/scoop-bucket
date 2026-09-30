@@ -1,0 +1,21 @@
+{
+    "version": "0.3.1",
+    "description": "Terminal Hacker News reader built for speed: stories, articles and comments on one screen",
+    "homepage": "https://github.com/sanford/lshn",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/sanford/lshn/releases/download/v0.3.1/lshn-windows-x64.zip",
+            "hash": "17fd0fd205918c47227c6208be1db720a4c061b8283894d88eaf0bbcbd08730c"
+        }
+    },
+    "bin": "lshn.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/sanford/lshn/releases/download/v$version/lshn-windows-x64.zip"
+            }
+        }
+    }
+}
