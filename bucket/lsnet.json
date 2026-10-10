@@ -1,12 +1,12 @@
 {
-    "version": "0.13.0",
+    "version": "0.14.0",
     "description": "See what's on your local network: fast, zero-config device discovery and identification",
     "homepage": "https://github.com/sanford/lsnet",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/sanford/lsnet/releases/download/v0.13.0/lsnet-windows-x64.zip",
-            "hash": "1a9e0c0e302bb7f2d6acdf51e22be7f347753c9b34e719f64ec4390234b09b3d"
+            "url": "https://github.com/sanford/lsnet/releases/download/v0.14.0/lsnet-windows-x64.zip",
+            "hash": "21493f0468fc15b2dda5a640623a3e84c38fdbef464f4aa05fac7b683b1a1058"
         }
     },
     "bin": "lsnet.exe",
